@@ -1,9 +1,18 @@
 import { TextField, InputAdornment, Typography } from "@mui/material";
-import { Stack } from "@mui/system";
+import { Stack } from "@mui/material";
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { makeStyles } from '@mui/styles';
+
+
+const useStyles = makeStyles({
+    default: {
+
+    }
+});
 
 function MyInput() {
+    const classes = useStyles();
 
     return (
         <>
@@ -16,7 +25,7 @@ function MyInput() {
                     label='Default'
                     variant="outlined"
                     required
-                    className='default'
+                    className={classes.default}
 
                 />
                 <TextField

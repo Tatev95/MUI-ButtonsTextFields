@@ -2,46 +2,42 @@
   margin: 0 auto;
 padding: 4rem;
 }
-
+/* 
 .contained:hover{
   background-color: #F5ECE5 !important;
 }
 .text:hover{
 background-color: rgba(236, 217, 204, 0.25) !important;
-}
-.text-1{
+} */
+/* .text-1{
   color: #192231 !important;
-}
-.text-2{
+} */
+/* .text-2{
   color: #BEB082 !important;
-}
-.hov{
+} */
+/* .hov{
   background-color:rgba(236, 217, 204, 0.25) !important ;
-}
-.hov2{
+} */
+/* .hov2{
   background-color:  rgba(236, 217, 204, 0.25) !important;;
-}
-.outlined{
+} */
+/* .outlined{
   border-color: rgba(190, 176, 130, 1) !important;
-}
-.add{
+} */
+/* .add{
   border-radius: 20px !important;
-}
-.hover-icon{
+} */
+/* .hover-icon{
   background-color: rgba(25, 118, 210, 0.04) !important; 
 }
 .next{
   color: rgba(175, 175, 175, 1) !important;
-}
+} */
 
-.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline{
+/* .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline{
   border-color: rgba(190, 176, 130, 1) !important ;
-}
+} */
 
-.hover{
+/* .hover{
   border-color: rgba(190, 176, 130, 1)  !important ;
-}
-.focused{
-  border-color: red !important ;
-  /* border-color: rgba(190, 176, 130, 1) !important ; */
-}
+} */

@@ -2,8 +2,119 @@ import { Button, Stack, Typography } from "@mui/material"
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined';
 import RadarIcon from '@mui/icons-material/Radar';
+import { makeStyles } from '@mui/styles';
+
+
+const useStyles = makeStyles({
+    root: {
+        backgroundColor: '#ECD9CC !important',
+        color: '#192231 !important',
+        font: 'MinervaModern',
+        borderRadius: '0 !important',
+        '&:hover': {
+            backgroundColor: '#F5ECE5 !important'
+        }
+    },
+    hover: {
+        backgroundColor: '#F5ECE5  !important',
+        color: '#192231  !important',
+        font: 'MinervaModern',
+        borderRadius: '0 !important',
+        borderColor: 'rgba(190, 176, 130, 1) !important',
+    },
+    disabled: {
+        borderRadius: '0 !important',
+    },
+    textOne: {
+        color: " #192231 !important",
+        borderColor: 'rgba(190, 176, 130, 1) !important',
+        borderRadius: '0 !important',
+        '&:hover': {
+            backgroundColor: "rgba(236, 217, 204, 0.25) !important"
+        }
+    },
+    textOnehov2: {
+        color: " #192231 !important",
+        backgroundColor: 'rgba(236, 217, 204, 0.25) !important',
+    },
+    textTwo: {
+        color: '#BEB082 !important',
+    },
+    textTwohov3: {
+        color: '#BEB082 !important',
+        backgroundColor: 'rgba(190, 176, 130, 0.05) !important',
+    },
+    disabledSmall: {
+        backgroundColor: 'rgba(175, 175, 175, 0.1) !important',
+    },
+    outlinedText1: {
+        color: "#192231 !important",
+        borderColor: 'rgba(190, 176, 130, 1) !important',
+        borderRadius: '0 !important',
+    },
+    cardLabel: {
+        color: "#192231 !important",
+        borderColor: 'rgba(190, 176, 130, 1) !important',
+        borderRadius: '0 !important',
+        backgroundColor: '#F5ECE5 !important',
+        width: '200px', 
+        height: '160px'
+    },
+    cardLabelHover: {
+        borderColor: 'rgba(190, 176, 130, 1) !important',
+        borderRadius: '0 !important',
+        backgroundColor: '#ECCCB7 !important',
+        color: '#FEFAF6 !important',
+        width: '200px',
+        height: '160px',
+    },
+    outlinedText1Back: {
+        color: "#192231 !important",
+        borderColor: 'rgba(190, 176, 130, 1) !important',
+        borderRadius: '0 !important',
+        backgroundColor: '#F5ECE5 !important',
+    },
+    outlinedText1Next: {
+        color: "rgba(175, 175, 175, 1) !important",
+        borderColor: 'rgba(190, 176, 130, 1) !important',
+        borderRadius: '0 !important',
+        backgroundColor: '#F7F7F7 !important',
+    },
+    outlinedText1Next2: {
+        color: "#192231 !important",
+        borderColor: 'rgba(190, 176, 130, 1) !important',
+        borderRadius: '0 !important',
+        backgroundColor: '#D2BCAC !important',
+    },
+    outlinedText1Mail: {
+        color: "#192231 !important",
+        borderColor: 'rgba(190, 176, 130, 1) !important',
+        borderRadius: '0 !important',
+        backgroundColor: '#ECD9CC !important',
+    },
+    outlinedText1Add: {
+        borderRadius: '20px !important',
+        color: "#192231 !important",
+        borderColor: 'rgba(190, 176, 130, 1) !important',
+    },
+    outlinedText1hov2: {
+        backgroundColor: 'rgba(236, 217, 204, 0.25) !important',
+        color: "#192231 !important",
+        borderColor: "rgba(190, 176, 130, 1) !important",
+        borderRadius: '0 !important',
+    },
+    addIcon: {
+        color: '#BEB082 !important'
+    },
+    small: {
+        color: "#192231 !important",
+    }
+});
+
 
 function MyButton() {
+    const classes = useStyles();
+
     return (
         <Stack spacing={4}>
             {/* contained */}
@@ -72,24 +183,28 @@ function MyButton() {
 
             <Stack spacing={2} direction='row'>
                 <Button
+                    className={classes.root}
                     variant="contained"
                     size='large'
-                    style={{ backgroundColor: '#ECD9CC', color: '#192231', font: 'MinervaModern' }}
-                    className="contained">
+                    disableElevation
+                >
                     Defaul Large
                 </Button>
                 <Button
                     variant="contained"
                     size='large'
-                    style={{ backgroundColor: '#F5ECE5', color: '#192231', font: 'MinervaModern' }}
-                    className="contained">
+                    className={classes.hover}
+                    disableElevation
+                >
                     Hover Large
                 </Button>
                 <Button
                     variant="contained"
                     size='large'
                     color='primary'
-                    disabled className="contained"
+                    disabled
+                    className={classes.disabled}
+                    disableElevation
                 >disabled Large
                 </Button>
             </Stack>
@@ -98,28 +213,57 @@ function MyButton() {
                 <Button
                     variant="contained"
                     size='medium'
-                    style={{ backgroundColor: '#ECD9CC', color: '#192231', font: 'MinervaModern' }}
-                    className="contained">Defaul medium</Button>
+                    className={classes.root}
+                    disableElevation
+                >
+                    Defaul medium
+                </Button>
                 <Button
                     variant="contained"
                     size='medium'
-                    style={{ backgroundColor: '#F5ECE5', color: '#192231', font: 'MinervaModern' }}
-                    className="contained">
+                    className={classes.hover}
+                    disableElevation
+                >
                     Hover medium
                 </Button>
                 <Button
                     variant="contained"
                     size='medium'
                     color='primary'
-                    disabled className="contained">
+                    disabled
+                    className={classes.disabled}
+                    disableElevation
+                >
                     disabled medium
                 </Button>
             </Stack>
             {/* small */}
             <Stack spacing={2} direction='row'>
-                <Button variant="contained" size='small' style={{ backgroundColor: '#ECD9CC', color: '#192231', font: 'MinervaModern' }} className="contained">Defaul small</Button>
-                <Button variant="contained" size='small' style={{ backgroundColor: '#F5ECE5', color: '#192231', font: 'MinervaModern' }} className="contained">Hover small</Button>
-                <Button variant="contained" size='small' color='primary' disabled className="contained">disabled small</Button>
+                <Button
+                    variant="contained"
+                    size='small'
+                    className={classes.root}
+                    disableElevation
+                >Defaul small
+                </Button>
+                <Button
+                    variant="contained"
+                    size='small'
+                    className={classes.hover}
+                    disableElevation
+                >
+                    Hover small
+                </Button>
+                <Button
+                    variant="contained"
+                    size='small'
+                    color='primary'
+                    disabled
+                    className={classes.disabled}
+                    disableElevation
+                >
+                    disabled small
+                </Button>
             </Stack>
 
             {/* text */}
@@ -129,13 +273,15 @@ function MyButton() {
                 <Button
                     variant="text"
                     size='small'
-                    className="text text-1">
+                    className={classes.textOne}
+                >
                     Default small
                 </Button>
                 <Button
                     variant="text"
                     size='small'
-                    className="text text-2">
+                    className={classes.textTwo}
+                >
                     Default small
                 </Button>
             </Stack>
@@ -144,13 +290,15 @@ function MyButton() {
                 <Button
                     variant="text"
                     size='small'
-                    className="text text-1 hov2">
+                    className={classes.textOnehov2}
+                >
                     Hover small
                 </Button>
                 <Button
                     variant="text"
                     size='small'
-                    className="text text-2 hov2">
+                    className={classes.textTwohov3}
+                >
                     Hover small
                 </Button>
             </Stack>
@@ -160,14 +308,18 @@ function MyButton() {
                     variant="text"
                     size='small'
                     color='primary'
-                    disabled className="text text-3 hov2">
+                    disabled
+                    className={classes.disabledSmall}
+                >
                     disabled small
                 </Button>
                 <Button
                     variant="text"
                     size='small'
                     color='primary'
-                    disabled className="text text-3 hov2">
+                    disabled
+                    className={classes.disabledSmall}
+                >
                     disabled small
                 </Button>
 
@@ -178,28 +330,32 @@ function MyButton() {
             <Stack spacing={2} direction='row'>
                 <Button
                     variant="outlined"
+                    size='small'
+                    disableElevation
+                    className={classes.outlinedText1}
+                >
+                    Default small
+                </Button>
+                <Button
+                    variant="outlined"
                     size='medium'
-                    className="outlined text-1">
+                    disableElevation
+                    className={classes.outlinedText1}
+                >
                     Default medium
                 </Button>
                 <Button
                     variant="outlined"
                     size='medium'
-                    className="outlined text-1">
-                    Default medium
-                </Button>
-                <Button
-                    variant="outlined"
-                    size='medium'
-                    className="outlined text-1 add icon"
-                    startIcon={<AddOutlinedIcon style={{ color: '#BEB082' }} />}>
+                    className={classes.outlinedText1Add}
+                    startIcon={<AddOutlinedIcon className={classes.addIcon} />}>
                     Find a Realtor
                 </Button>
                 <Button
                     variant="outlined"
                     size='medium'
-                    className="outlined text-1 add icon"
-                    endIcon={<ClearOutlinedIcon style={{ color: '#BEB082' }} />}>
+                    className={classes.outlinedText1Add}
+                    endIcon={<ClearOutlinedIcon className={classes.addIcon} />}>
                     Home selling tips
                 </Button>
             </Stack>
@@ -207,13 +363,16 @@ function MyButton() {
             <Stack spacing={2} direction='row'>
                 <Button
                     variant="outlined"
-                    size='medium'
-                    className="outlined text-1 hov2">
-                    Hover medium
+                    size='small'
+                    className={classes.outlinedText1hov2}
+                >
+                    Hover small
                 </Button>
                 <Button
                     variant="outlined"
-                    size='medium' className="outlined text-1 hov2">
+                    size='medium'
+                    className={classes.outlinedText1hov2}
+                >
                     Hover medium
                 </Button>
             </Stack>
@@ -221,18 +380,20 @@ function MyButton() {
             <Stack spacing={2} direction='row'>
                 <Button
                     variant="outlined"
-                    size='medium'
+                    size='small'
                     color='primary'
                     disabled
-                    className="outlined text-3 hov2">
-                    disabled medium
+                    className={classes.disabled}
+                >
+                    disabled small
                 </Button>
                 <Button
                     variant="outlined"
                     size='medium'
                     color='primary'
                     disabled
-                    className="outlined text-3 hov2">
+                    className={classes.disabled}
+                >
                     disabled medium
                 </Button>
 
@@ -241,29 +402,29 @@ function MyButton() {
                 <Button
                     variant="outlined"
                     size='small'
-                    className="outlined text-1 icon"
-                    startIcon={<AddOutlinedIcon style={{ color: '#BEB082' }} />}>
+                    className={classes.textOne}
+                    startIcon={<AddOutlinedIcon sx={{ color: '#BEB082' }} />}>
                     small
                 </Button>
                 <Button
                     variant="outlined"
                     size='small'
-                    className="outlined text-1 icon hover-icon"
-                    startIcon={<AddOutlinedIcon style={{ color: '#BEB082' }} />}>
-                    hover
+                    className={classes.hover}
+                    startIcon={<AddOutlinedIcon sx={{ color: '#BEB082' }} />}>
+                    hoverrrrr
                 </Button>
                 <Button
                     variant="text"
                     size='small'
-                    className="outlined text-1 icon"
-                    startIcon={<AddOutlinedIcon style={{ color: '#BEB082' }} />}>
+                    className={classes.small}
+                    startIcon={<AddOutlinedIcon sx={{ color: '#BEB082' }} />}>
                     small
                 </Button>
                 <Button
                     variant="text"
                     size='small'
-                    className="outlined text-1 icon hover-icon"
-                    startIcon={<AddOutlinedIcon style={{ color: '#BEB082' }} />}
+                    className={classes.disabled}
+                    startIcon={<AddOutlinedIcon sx={{ color: '#BEB082' }} />}
                     disabled>
                     hover
                 </Button>
@@ -273,8 +434,7 @@ function MyButton() {
                 <Button
                     variant="contained"
                     size='large'
-                    className="outlined text-1"
-                    style={{ backgroundColor: '#ECD9CC' }}
+                    className={classes.outlinedText1Mail}
                     disableElevation
                 >
                     VERIFY EMAIL
@@ -282,24 +442,21 @@ function MyButton() {
                 <Button
                     variant="contained"
                     size='large'
-                    className="outlined next"
-                    style={{ backgroundColor: '#F7F7F7' }}
+                    className={classes.outlinedText1Next}
                     disableElevation
                 >NEXT
                 </Button>
                 <Button
                     variant="contained"
                     size='large'
-                    className="outlined text-1"
-                    style={{ backgroundColor: '#F5ECE5' }}
+                    className={classes.outlinedText1Back}
                     disableElevation
                 >BACK
                 </Button>
                 <Button
                     variant="contained"
                     size='large'
-                    className="outlined text-1"
-                    style={{ backgroundColor: '#D2BCAC' }}
+                    className={classes.outlinedText1Next2}
                     disableElevation
                 >NEXT
                 </Button>
@@ -308,20 +465,18 @@ function MyButton() {
             <Stack spacing={2} direction='row'>
                 <Button
                     variant="contained"
-                    startIcon={<RadarIcon style={{ color: '#ECCCB7' }} />}
+                    startIcon={<RadarIcon sx={{ color: '#ECCCB7' }} />}
                     size='large'
-                    className="outlined text-1"
-                    style={{ backgroundColor: '#F5ECE5', color: '#192231', width: '200px', height: '160px' }}
+                    className={classes.cardLabel}
                     disableElevation
                 >
                     Card Label Placeholder
                 </Button>
                 <Button
                     variant="contained"
-                    startIcon={<RadarIcon style={{ color: '#FEFAF6' }} />}
+                    startIcon={<RadarIcon sx={{ color: '#FEFAF6' }} />}
                     size='large'
-                    className="outlined text-1"
-                    style={{ backgroundColor: '#ECCCB7', color: '#FEFAF6', width: '200px', height: '160px' }}
+                    className={classes.cardLabelHover}
                     disableElevation
                 >
                     Card Label Placeholder Hover
