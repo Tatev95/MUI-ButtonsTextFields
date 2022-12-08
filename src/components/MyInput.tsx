@@ -6,9 +6,101 @@ import { makeStyles } from '@mui/styles';
 
 
 const useStyles = makeStyles({
-    default: {
+    root: {
+        '& label.Mui-focused': {
+            color: 'rgba(190, 176, 130, 1)',  // focused label color
+        },
+        '& label.Mui-hover': {
+            color: 'rgba(190, 176, 130, 1)',
+        },
+        '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+                borderColor: 'rgba(190, 176, 130, 0.6)',  // default border color
+            },
+            '&:hover fieldset': {
+                borderColor: 'rgba(190, 176, 130, 1)',  // hover border color
+            },
+            '&.Mui-focused fieldset': {
+                borderColor: 'rgba(190, 176, 130, 1)',  // focused border color
+            },
+        },
+    },
+    focused: {
+        '& label.Mui-focused': {
+            color: 'rgba(190, 176, 130, 1)',
+        },
+        '& label.Mui-hover': {
+            color: 'rgba(190, 176, 130, 1)',
+        },
+        '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+                borderColor: 'rgba(190, 176, 130, 1)',
+                border: "2px solid",
+            },
+            '&:hover fieldset': {
+                borderColor: 'rgba(190, 176, 130, 1)',
+            },
+            '&.Mui-focused fieldset': {
+                borderColor: 'rgba(190, 176, 130, 1)',
+            },
+        },
 
-    }
+    },
+    hover: {
+        '& label.Mui-focused': {
+            color: 'rgba(190, 176, 130, 1)',
+        },
+        '& label.Mui-hover': {
+            color: 'rgba(190, 176, 130, 1)',
+        },
+        '& label.Mui-activated': {
+            color: 'red',
+        },
+        // '& .MuiInput-underline:after': {
+        //   borderBottomColor: 'yellow',
+        // },
+        '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+                borderColor: 'rgba(190, 176, 130, 1)',
+            },
+            '&:hover fieldset': {
+                borderColor: 'rgba(190, 176, 130, 1)',
+            },
+            '&.Mui-focused fieldset': {
+                borderColor: 'rgba(190, 176, 130, 1)',
+            },
+        },
+
+    },
+    disabled: {
+        borderStyle: 'dotted !important'   //not working!!!  
+    },
+    // error: {
+    //     labelPlacement: 'end !important'
+    // },
+    icon: {
+        color: 'rgba(190, 176, 130, 1)',
+    },
+    textArea: {
+        '& label.Mui-focused': {
+            color: 'rgba(190, 176, 130, 1)',
+        },
+        '& label.Mui-hover': {
+            color: 'rgba(190, 176, 130, 1)',
+        },
+        '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+                borderColor: 'rgba(190, 176, 130, 0.6)',
+            },
+            '&:hover fieldset': {
+                borderColor: 'rgba(190, 176, 130, 1)',
+            },
+            '&.Mui-focused fieldset': {
+                borderColor: 'rgba(190, 176, 130, 1)',
+            },
+        },
+
+    },
 });
 
 function MyInput() {
@@ -25,25 +117,34 @@ function MyInput() {
                     label='Default'
                     variant="outlined"
                     required
-                    className={classes.default}
+                    className={classes.root}
+                    sx={{
+                        label: { color: '#BEB082' },
+                    }}
 
                 />
                 <TextField
                     size='small'
-                    label='Default'
+                    label='Placeholder'
                     variant="outlined"
-                    className='default'
+                    className={classes.root}
+                    sx={{
+                        label: { color: '#BEB082' },
+                    }}
                 />
-                         <TextField
+                <TextField
                     InputProps={{
                         startAdornment: <InputAdornment position="end"></InputAdornment>,
-                        sx: { height: 120, width: 400 } 
+                        sx: { height: 120, width: 400 }
                     }}
                     size='medium'
                     label='Default'
                     variant="outlined"
                     required
-                    className='default'
+                    className={classes.root}
+                    sx={{
+                        label: { color: '#BEB082' },
+                    }}
                 />
             </Stack>
             <Stack direction='row' spacing={4} sx={{ mb: 2 }} >
@@ -52,17 +153,22 @@ function MyInput() {
                         startAdornment: <InputAdornment position="end"></InputAdornment>,
                     }}
                     size='medium'
-                    label='hover'
+                    label='Hover'
                     variant="outlined"
                     required
-                    className='hover'
-
+                    className={classes.hover}
+                    sx={{
+                        label: { color: '#BEB082' },
+                    }}
                 />
                 <TextField
                     size='small'
-                    label='hover'
+                    label='Placeholder'
                     variant="outlined"
-                    className='hover'
+                    className={classes.hover}
+                    sx={{
+                        label: { color: '#BEB082' },
+                    }}
                 />
             </Stack>
 
@@ -75,14 +181,19 @@ function MyInput() {
                     label='Focused'
                     variant="outlined"
                     required
-                    className='focused'
-
+                    className={classes.focused}
+                    sx={{
+                        label: { color: '#BEB082' },
+                    }}
                 />
                 <TextField
                     size='small'
                     label='Focused'
                     variant="outlined"
-                    className='focused'
+                    className={classes.focused}
+                    sx={{
+                        label: { color: '#BEB082' },
+                    }}
                 />
             </Stack>
 
@@ -95,14 +206,19 @@ function MyInput() {
                     label='Activated'
                     variant="outlined"
                     required
-                    className='default'
-
+                    className={classes.root}
+                    sx={{
+                        label: { color: '#BEB082' },
+                    }}
                 />
                 <TextField
                     size='small'
                     label='Activated'
                     variant="outlined"
-                    className='default'
+                    className={classes.root}
+                    sx={{
+                        label: { color: '#BEB082' },
+                    }}
                 />
             </Stack>
 
@@ -115,7 +231,6 @@ function MyInput() {
                     label='Error'
                     variant="outlined"
                     required
-                    className='default'
                     error
                     helperText='Helper Text/hint'
 
@@ -124,7 +239,6 @@ function MyInput() {
                     size='small'
                     label='Error'
                     variant="outlined"
-                    className='default'
                     error
                 />
             </Stack>
@@ -139,7 +253,7 @@ function MyInput() {
                     variant="outlined"
                     required
                     disabled
-                    className='disabled'
+                    className={classes.disabled}
 
                 />
                 <TextField
@@ -158,22 +272,28 @@ function MyInput() {
                 <TextField
                     InputProps={{
                         startAdornment: <InputAdornment position="end"></InputAdornment>,
-                        endAdornment: <InputAdornment position='end'><VisibilityIcon /></InputAdornment>
+                        endAdornment: <InputAdornment position='end'><VisibilityIcon className={classes.icon}/></InputAdornment>
                     }}
                     size='medium'
                     label='Default'
                     variant="outlined"
                     required
-                    className='default'
+                    className={classes.root}
+                    sx={{
+                        label: { color: '#BEB082' },
+                    }}
 
                 />
                 <TextField
                     size='small'
                     label='Default'
                     variant="outlined"
-                    className='default'
+                    className={classes.root}
+                    sx={{
+                        label: { color: '#BEB082' },
+                    }}
                     InputProps={{
-                        endAdornment: <InputAdornment position='end'><KeyboardArrowDownIcon /></InputAdornment>
+                        endAdornment: <InputAdornment position='end'><KeyboardArrowDownIcon className={classes.icon}/></InputAdornment>
                     }}
                 />
             </Stack>
@@ -181,22 +301,27 @@ function MyInput() {
                 <TextField
                     InputProps={{
                         startAdornment: <InputAdornment position="end"></InputAdornment>,
-                        endAdornment: <InputAdornment position='end'><VisibilityIcon /></InputAdornment>
+                        endAdornment: <InputAdornment position='end'><VisibilityIcon className={classes.icon}/></InputAdornment>
                     }}
                     size='medium'
                     label='hover'
                     variant="outlined"
                     required
-                    className='hover'
-
+                    className={classes.hover}
+                    sx={{
+                        label: { color: '#BEB082' },
+                    }}
                 />
                 <TextField
                     size='small'
                     label='hover'
                     variant="outlined"
-                    className='hover'
+                    className={classes.hover}
+                    sx={{
+                        label: { color: '#BEB082' },
+                    }}
                     InputProps={{
-                        endAdornment: <InputAdornment position='end'><KeyboardArrowDownIcon /></InputAdornment>
+                        endAdornment: <InputAdornment position='end'><KeyboardArrowDownIcon className={classes.icon}/></InputAdornment>
                     }}
                 />
             </Stack>
@@ -205,45 +330,55 @@ function MyInput() {
                 <TextField
                     InputProps={{
                         startAdornment: <InputAdornment position="end"></InputAdornment>,
-                        endAdornment: <InputAdornment position='end'><VisibilityIcon /></InputAdornment>
+                        endAdornment: <InputAdornment position='end'><VisibilityIcon className={classes.icon}/></InputAdornment>
                     }}
                     size='medium'
                     label='Focused'
                     variant="outlined"
                     required
-                    className='focused'
-
+                    className={classes.focused}
+                    sx={{
+                        label: { color: '#BEB082' },
+                    }}
                 />
                 <TextField
                     size='small'
                     label='Focused'
                     variant="outlined"
-                    className='focused'
-                    InputProps={{
-                        endAdornment: <InputAdornment position='end'><KeyboardArrowDownIcon /></InputAdornment>
-                    }}                />
+                    className={classes.focused}
+                    sx={{
+                        label: { color: '#BEB082' },
+                    }}
+                                        InputProps={{
+                        endAdornment: <InputAdornment position='end'><KeyboardArrowDownIcon className={classes.icon}/></InputAdornment>
+                    }} />
             </Stack>
 
             <Stack direction='row' spacing={4} sx={{ mb: 2 }} >
                 <TextField
                     InputProps={{
                         startAdornment: <InputAdornment position="end"></InputAdornment>,
-                        endAdornment: <InputAdornment position='end'><VisibilityIcon /></InputAdornment>
+                        endAdornment: <InputAdornment position='end'><VisibilityIcon className={classes.icon}/></InputAdornment>
                     }}
                     size='medium'
                     label='Activated'
                     variant="outlined"
                     required
-                    className='default'
-
+                    className={classes.root}
+                    sx={{
+                        label: { color: '#BEB082' },
+                    }}
                 />
                 <TextField
                     size='small'
                     label='Activated'
                     variant="outlined"
-                    className='default'
-                    InputProps={{
-                        endAdornment: <InputAdornment position='end'><KeyboardArrowDownIcon /></InputAdornment>
+                    className={classes.root}
+                    sx={{
+                        label: { color: '#BEB082' },
+                    }}             
+                           InputProps={{
+                        endAdornment: <InputAdornment position='end'><KeyboardArrowDownIcon className={classes.icon}/></InputAdornment>
                     }}
                 />
             </Stack>
@@ -252,14 +387,13 @@ function MyInput() {
                 <TextField
                     InputProps={{
                         startAdornment: <InputAdornment position="end"></InputAdornment>,
-                        endAdornment: <InputAdornment position='end'><VisibilityIcon /></InputAdornment>,
-                        disableUnderline: true
+                        disableUnderline: true,
                     }}
                     size='medium'
                     label='Error'
                     variant="standard"
                     required
-                    className='default'
+                    // className={classes.error}
                     error
                     helperText='Helper Text/hint'
                 />
@@ -270,8 +404,9 @@ function MyInput() {
                     className='default'
                     error
                     InputProps={{
-                        endAdornment: <InputAdornment position='end'><KeyboardArrowDownIcon /></InputAdornment>
+                        endAdornment: <InputAdornment position='end'><KeyboardArrowDownIcon className={classes.icon}/></InputAdornment>
                     }}
+                    helperText='Helper Text/hint'
                 />
             </Stack>
 
@@ -279,7 +414,7 @@ function MyInput() {
                 <TextField
                     InputProps={{
                         startAdornment: <InputAdornment position="end"></InputAdornment>,
-                        endAdornment: <InputAdornment position='end'><VisibilityIcon /></InputAdornment>, 
+                        endAdornment: <InputAdornment position='end'><VisibilityIcon className={classes.icon}/></InputAdornment>,
                     }}
                     size='medium'
                     label='Disabled'
@@ -296,7 +431,7 @@ function MyInput() {
                     disabled
                     className='disabled'
                     InputProps={{
-                        endAdornment: <InputAdornment position='end'><KeyboardArrowDownIcon /></InputAdornment>
+                        endAdornment: <InputAdornment position='end'><KeyboardArrowDownIcon className={classes.icon}/></InputAdornment>
                     }}
                 />
             </Stack>

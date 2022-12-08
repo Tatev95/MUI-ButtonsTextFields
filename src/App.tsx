@@ -7,8 +7,8 @@ import MySelect from './components/MySelect';
 function App() {
   return (
     <div className="App">
-      <MyButton />
-      {/* <MyInput /> */}
+      {/* <MyButton /> */}
+      <MyInput />
       {/* <MySelect /> */}
 
     </div>
