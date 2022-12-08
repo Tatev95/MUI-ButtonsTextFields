@@ -404,7 +404,7 @@ function MyInput() {
                     className='default'
                     error
                     InputProps={{
-                        endAdornment: <InputAdornment position='end'><KeyboardArrowDownIcon className={classes.icon}/></InputAdornment>
+                        endAdornment: <InputAdornment position='end'><KeyboardArrowDownIcon className={classes.icon} sx={{color: 'rgba(229, 86, 86, 1)'}}/></InputAdornment>
                     }}
                     helperText='Helper Text/hint'
                 />
@@ -414,12 +414,13 @@ function MyInput() {
                 <TextField
                     InputProps={{
                         startAdornment: <InputAdornment position="end"></InputAdornment>,
-                        endAdornment: <InputAdornment position='end'><VisibilityIcon className={classes.icon}/></InputAdornment>,
+                        endAdornment: <InputAdornment position='end'><VisibilityIcon className={classes.icon} sx={{color: 'rgba(222, 222, 222, 1)'}}/></InputAdornment>,
                     }}
                     size='medium'
                     label='Disabled'
                     variant="outlined"
                     required
+
                     disabled
                     className='disabled'
 
@@ -431,7 +432,7 @@ function MyInput() {
                     disabled
                     className='disabled'
                     InputProps={{
-                        endAdornment: <InputAdornment position='end'><KeyboardArrowDownIcon className={classes.icon}/></InputAdornment>
+                        endAdornment: <InputAdornment position='end'><KeyboardArrowDownIcon className={classes.icon} sx={{color: 'rgba(222, 222, 222, 1)'}}/></InputAdornment>
                     }}
                 />
             </Stack>

@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       {/* <MyButton /> */}
       <MyInput />
-      {/* <MySelect /> */}
+      <MySelect />
 
     </div>
   );
