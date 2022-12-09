@@ -7,6 +7,7 @@ import { makeStyles } from '@mui/styles';
 import { Stack } from "@mui/material";
 import Checkbox from '@mui/material/Checkbox';
 import SearchIcon from '@mui/icons-material/Search';
+import { shadows } from '@mui/system';
 
 
 const useStyles = makeStyles({
@@ -40,15 +41,8 @@ const useStyles = makeStyles({
   },
   hover: {
     width: '200px',
-    // '&:hover':{
-    //   border:''
-    // }
-    // '.MuiOutlinedInput-notchedOutline': {
-    // borderColor: 'red !important',
     border: '1px solid rgba(190, 176, 130, 1)',
     borderRadius: '0 !important',
-
-    // },
     '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
       borderColor: 'rgba(190, 176, 130, 0.5) !important',
     },
@@ -61,6 +55,9 @@ const useStyles = makeStyles({
   },
   icon: {
     fill: 'red',
+  },
+  box: {
+    boxShadow: "12",
   },
   button: {
     backgroundColor: 'rgba(236, 217, 204, 1) !important',
@@ -129,20 +126,22 @@ function MySelect() {
           </FormControl>
         </Box>
 
-        <Box sx={{ minWidth: 120 }}>
+        <Box sx={{ minWidth: 120 }} width="250px">
           <FormControl fullWidth>
             <InputLabel id="demo-simple-select-label">Select</InputLabel>
-            <Select
-              color='secondary'
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              label="Select"
+            <TextField
+              select
+              fullWidth
+              size='medium'
               className={classes.root}
+              label='Select'
+              sx={{ borderRadius: 0 }}
             >
               <MenuItem>Body1</MenuItem>
               <MenuItem>Body1</MenuItem>
               <MenuItem>Body1</MenuItem>
-            </Select>
+
+            </TextField>
           </FormControl>
         </Box>
 
@@ -178,13 +177,16 @@ function MySelect() {
       </Stack>
 
       <Stack direction='row' spacing={4} sx={{ mb: 2 }} >
-        <Box width="250px" >
+        <Box width="250px" height="130px"
+          sx={{
+            boxShadow: 8
+          }}>
           <MenuItem>Body1</MenuItem>
           <MenuItem>Body1</MenuItem>
           <MenuItem>Body1</MenuItem>
         </Box>
 
-        <Box width="250px" sx={{ height: '250px', overflowY: 'scroll' }}>
+        <Box width="250px" sx={{ height: '250px', overflowY: 'scroll', boxShadow: 8 }}>
           <MenuItem>Body1</MenuItem>
           <MenuItem>Body1</MenuItem>
           <MenuItem>Body1</MenuItem>
@@ -214,30 +216,31 @@ function MySelect() {
               )
             }}
           >
-            <MenuItem><Checkbox />Body1</MenuItem>
-            <MenuItem><Checkbox />Body1</MenuItem>
-            <MenuItem><Checkbox />Body1</MenuItem>
-            <Stack direction='row' spacing={4} sx={{ mb: 2, display: 'flex', justifyContent: 'center' }} >
-              <Button
-                className={classes.button}
-                variant="contained"
-                fullWidth={true}
-                size='large'
-                disableElevation
-              >
-                Apply
-              </Button>
-              <Button
-                className={classes.button2}
-                fullWidth={true}
-                variant="contained"
-                size='large'
-                disableElevation
-              >
-                Clear
-              </Button>
-            </Stack>
-
+            <Box width='200px'>
+              <MenuItem><Checkbox />Body1</MenuItem>
+              <MenuItem><Checkbox />Body1</MenuItem>
+              <MenuItem><Checkbox />Body1</MenuItem>
+              <Stack direction='row' spacing={4} sx={{ mb: 2, display: 'flex' }} >
+                <Button
+                  className={classes.button}
+                  variant="contained"
+                  fullWidth={true}
+                  size='large'
+                  disableElevation
+                >
+                  Apply
+                </Button>
+                <Button
+                  className={classes.button2}
+                  fullWidth={true}
+                  variant="contained"
+                  size='large'
+                  disableElevation
+                >
+                  Clear
+                </Button>
+              </Stack>
+            </Box>
           </TextField>
 
         </Box>
@@ -261,18 +264,18 @@ function MySelect() {
           >
 
             <Box width="250px" sx={{ height: '250px', overflowY: 'scroll' }}>
-            <MenuItem><Checkbox />Body1</MenuItem>
-            <MenuItem><Checkbox />Body1</MenuItem>
-            <MenuItem><Checkbox />Body1</MenuItem>
-            <MenuItem><Checkbox />Body1</MenuItem>
-            <MenuItem><Checkbox />Body1</MenuItem>
-            <MenuItem><Checkbox />Body1</MenuItem>
-            <MenuItem><Checkbox />Body1</MenuItem>
-            <MenuItem><Checkbox />Body1</MenuItem>
-            <MenuItem><Checkbox />Body1</MenuItem>
-            <MenuItem><Checkbox />Body1</MenuItem>
-            <MenuItem><Checkbox />Body1</MenuItem>
-            <MenuItem><Checkbox />Body1</MenuItem>
+              <MenuItem>Beverly Hills</MenuItem>
+              <MenuItem><Checkbox />90035</MenuItem>
+              <MenuItem><Checkbox />92035</MenuItem>
+              <MenuItem><Checkbox />90035</MenuItem>
+              <MenuItem><Checkbox />90035</MenuItem>
+              <MenuItem><Checkbox />90035</MenuItem>
+              <MenuItem><Checkbox />90035</MenuItem>
+              <MenuItem><Checkbox />90035</MenuItem>
+              <MenuItem><Checkbox />90035</MenuItem>
+              <MenuItem><Checkbox />90035</MenuItem>
+              <MenuItem><Checkbox />90035</MenuItem>
+              <MenuItem><Checkbox />90035</MenuItem>
             </Box>
             <Stack direction='row' spacing={4} sx={{ mb: 2, display: 'flex', justifyContent: 'center' }} >
               <Button
@@ -298,21 +301,66 @@ function MySelect() {
           </TextField>
 
         </Box>
-        
-        <Box width="250px" sx={{ height: '250px', overflowY: 'scroll', border: '1px solid grey' }}>
-            <MenuItem><Checkbox />Body1</MenuItem>
-            <MenuItem><Checkbox />Body1</MenuItem>
-            <MenuItem><Checkbox />Body1</MenuItem>
-            <MenuItem><Checkbox />Body1</MenuItem>
-            <MenuItem><Checkbox />Body1</MenuItem>
-            <MenuItem><Checkbox />Body1</MenuItem>
-            <MenuItem><Checkbox />Body1</MenuItem>
-            <MenuItem><Checkbox />Body1</MenuItem>
-            <MenuItem><Checkbox />Body1</MenuItem>
-            <MenuItem><Checkbox />Body1</MenuItem>
-            <MenuItem><Checkbox />Body1</MenuItem>
-            <MenuItem><Checkbox />Body1</MenuItem>
-            </Box>
+        {/* 
+        <Box width="250px" sx={{ height: '250px', overflowY: 'scroll', boxShadow: 8 }}>
+          <MenuItem><Checkbox />Body1</MenuItem>
+          <MenuItem><Checkbox />Body1</MenuItem>
+          <MenuItem><Checkbox />Body1</MenuItem>
+          <MenuItem><Checkbox />Body1</MenuItem>
+          <MenuItem><Checkbox />Body1</MenuItem>
+          <MenuItem><Checkbox />Body1</MenuItem>
+          <MenuItem><Checkbox />Body1</MenuItem>
+          <MenuItem><Checkbox />Body1</MenuItem>
+          <MenuItem><Checkbox />Body1</MenuItem>
+          <MenuItem><Checkbox />Body1</MenuItem>
+          <MenuItem><Checkbox />Body1</MenuItem>
+          <MenuItem><Checkbox />Body1</MenuItem>
+        </Box> */}
+      </Stack>
+
+
+      <Stack direction='row' spacing={4} >
+        <Box
+          width="250px"
+          className={classes.box}
+          sx={{
+            boxShadow: 8
+          }}>
+          <MenuItem>Last month</MenuItem>
+          <MenuItem>Last 3 month</MenuItem>
+          <MenuItem>Last 6 month</MenuItem>
+          <MenuItem>Last 12 month</MenuItem>
+          <MenuItem>Last 3 years</MenuItem>
+        </Box>
+
+        <Box width="250px">
+          <MenuItem>Beverly Hills</MenuItem>
+          <MenuItem><Checkbox />90035</MenuItem>
+          <MenuItem><Checkbox />92035</MenuItem>
+          <MenuItem><Checkbox />90035</MenuItem>
+          <MenuItem><Checkbox />90035</MenuItem>
+        </Box>
+      </Stack>
+
+
+      <Stack direction='row' spacing={4} sx={{ mb: 2, mt: 20 }} >
+        <Box width="250px" height="130px"
+          sx={{
+            boxShadow: 8
+          }}>
+          <MenuItem>Body1</MenuItem>
+          <MenuItem>Body1</MenuItem>
+          <MenuItem>Body1</MenuItem>
+        </Box>
+
+        <Box width="250px" height="130px"
+          sx={{
+            boxShadow: 8
+          }}>
+          {/* <MenuItem>Body1</MenuItem>
+          <MenuItem>Body1</MenuItem>
+          <MenuItem>Body1</MenuItem> */}
+        </Box>
       </Stack>
 
     </>

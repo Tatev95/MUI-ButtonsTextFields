@@ -56,9 +56,6 @@ const useStyles = makeStyles({
         '& label.Mui-activated': {
             color: 'red',
         },
-        // '& .MuiInput-underline:after': {
-        //   borderBottomColor: 'yellow',
-        // },
         '& .MuiOutlinedInput-root': {
             '& fieldset': {
                 borderColor: 'rgba(190, 176, 130, 1)',
