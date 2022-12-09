@@ -1,4 +1,4 @@
-import { Box, TextField, Button } from '@mui/material'
+import { Box, TextField, Button, InputAdornment } from '@mui/material'
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -6,6 +6,7 @@ import Select from '@mui/material/Select';
 import { makeStyles } from '@mui/styles';
 import { Stack } from "@mui/material";
 import Checkbox from '@mui/material/Checkbox';
+import SearchIcon from '@mui/icons-material/Search';
 
 
 const useStyles = makeStyles({
@@ -61,6 +62,25 @@ const useStyles = makeStyles({
   icon: {
     fill: 'red',
   },
+  button: {
+    backgroundColor: 'rgba(236, 217, 204, 1) !important',
+    width: '125px !important',
+    borderRadius: '0 !important',
+    color: 'rgba(25, 34, 49, 1) !important',
+    border: '1px solid rgba(190, 176, 130, 0.3) !important',
+    marginLeft: '0 !important',
+    marginRight: '0 !important',
+
+  },
+  button2: {
+    backgroundColor: 'rgba(255, 255, 255, 1) !important',
+    width: '125px !important',
+    borderRadius: '0 !important',
+    color: 'rgba(25, 34, 49, 1) !important',
+    border: '1px solid rgba(190, 176, 130, 0.3) !important',
+    marginLeft: '0 !important',
+    marginRight: '0 !important',
+  },
   label: {
     color: "green",
     "&.Mui-focused": {
@@ -77,7 +97,7 @@ function MySelect() {
     <>
 
 
-      <Stack direction='row' spacing={4} sx={{ mb: 2 }} >
+      <Stack direction='row' spacing={4} sx={{ mb: 20 }} >
         <Box sx={{ minWidth: 120 }}>
           <FormControl fullWidth>
             <InputLabel id="demo-simple-select-label">Select</InputLabel>
@@ -94,7 +114,7 @@ function MySelect() {
 
         <Box sx={{ minWidth: 120 }}>
           <FormControl fullWidth>
-            <InputLabel id="demo-simple-select-label">Age</InputLabel>
+            <InputLabel id="demo-simple-select-label"></InputLabel>
             <Select
               labelId="demo-simple-select-label"
               id="demo-simple-select"
@@ -102,9 +122,6 @@ function MySelect() {
               className={classes.hover}
               displayEmpty
             >
-              {/* <MenuItem value="">
-              <em>None</em>
-            </MenuItem> */}
               <MenuItem>Ten</MenuItem>
               <MenuItem>Twenty</MenuItem>
               <MenuItem>Thirty</MenuItem>
@@ -137,9 +154,9 @@ function MySelect() {
             className={classes.root}
             label='Select'
           >
-            <MenuItem>Armenia</MenuItem>
-            <MenuItem>USA</MenuItem>
-            <MenuItem>France</MenuItem>
+            <MenuItem>Body1</MenuItem>
+            <MenuItem>Body1</MenuItem>
+            <MenuItem>Body1</MenuItem>
           </TextField>
         </Box>
 
@@ -187,33 +204,115 @@ function MySelect() {
             fullWidth
             size='medium'
             className={classes.root}
-            label='Select'
+            label='Search'
+            SelectProps={{ IconComponent: () => null }}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <SearchIcon />
+                </InputAdornment>
+              )
+            }}
           >
             <MenuItem><Checkbox />Body1</MenuItem>
             <MenuItem><Checkbox />Body1</MenuItem>
             <MenuItem><Checkbox />Body1</MenuItem>
-            <Stack direction='row' spacing={4} sx={{ mb: 2, display: 'flex',}} >
-            <Button
-                    // className={classes.root}
-                    variant="contained"
-                    size='large'
-                    disableElevation
-                >
-                    Apply
-                </Button>
-                <Button
-                    // className={classes.root}
-                    variant="contained"
-                    size='large'
-                    disableElevation
-                >
-                    Clear
-                </Button>
-              </Stack>
-    
+            <Stack direction='row' spacing={4} sx={{ mb: 2, display: 'flex', justifyContent: 'center' }} >
+              <Button
+                className={classes.button}
+                variant="contained"
+                fullWidth={true}
+                size='large'
+                disableElevation
+              >
+                Apply
+              </Button>
+              <Button
+                className={classes.button2}
+                fullWidth={true}
+                variant="contained"
+                size='large'
+                disableElevation
+              >
+                Clear
+              </Button>
+            </Stack>
+
           </TextField>
 
         </Box>
+
+        {/* checkobox search group */}
+        <Box width="250px">
+          <TextField
+            select
+            fullWidth
+            size='medium'
+            className={classes.root}
+            label='Search'
+            SelectProps={{ IconComponent: () => null }}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <SearchIcon />
+                </InputAdornment>
+              )
+            }}
+          >
+
+            <Box width="250px" sx={{ height: '250px', overflowY: 'scroll' }}>
+            <MenuItem><Checkbox />Body1</MenuItem>
+            <MenuItem><Checkbox />Body1</MenuItem>
+            <MenuItem><Checkbox />Body1</MenuItem>
+            <MenuItem><Checkbox />Body1</MenuItem>
+            <MenuItem><Checkbox />Body1</MenuItem>
+            <MenuItem><Checkbox />Body1</MenuItem>
+            <MenuItem><Checkbox />Body1</MenuItem>
+            <MenuItem><Checkbox />Body1</MenuItem>
+            <MenuItem><Checkbox />Body1</MenuItem>
+            <MenuItem><Checkbox />Body1</MenuItem>
+            <MenuItem><Checkbox />Body1</MenuItem>
+            <MenuItem><Checkbox />Body1</MenuItem>
+            </Box>
+            <Stack direction='row' spacing={4} sx={{ mb: 2, display: 'flex', justifyContent: 'center' }} >
+              <Button
+                className={classes.button}
+                variant="contained"
+                fullWidth={true}
+                size='large'
+                disableElevation
+              >
+                Apply
+              </Button>
+              <Button
+                className={classes.button2}
+                fullWidth={true}
+                variant="contained"
+                size='large'
+                disableElevation
+              >
+                Clear
+              </Button>
+            </Stack>
+
+          </TextField>
+
+        </Box>
+        
+        <Box width="250px" sx={{ height: '250px', overflowY: 'scroll', border: '1px solid grey' }}>
+            <MenuItem><Checkbox />Body1</MenuItem>
+            <MenuItem><Checkbox />Body1</MenuItem>
+            <MenuItem><Checkbox />Body1</MenuItem>
+            <MenuItem><Checkbox />Body1</MenuItem>
+            <MenuItem><Checkbox />Body1</MenuItem>
+            <MenuItem><Checkbox />Body1</MenuItem>
+            <MenuItem><Checkbox />Body1</MenuItem>
+            <MenuItem><Checkbox />Body1</MenuItem>
+            <MenuItem><Checkbox />Body1</MenuItem>
+            <MenuItem><Checkbox />Body1</MenuItem>
+            <MenuItem><Checkbox />Body1</MenuItem>
+            <MenuItem><Checkbox />Body1</MenuItem>
+            </Box>
       </Stack>
 
     </>
